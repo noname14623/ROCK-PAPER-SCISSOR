@@ -41,6 +41,14 @@ for(let i = 0 ; i < weapons.length; i++){
         
         //add a delay before showing the player choices
        setTimeout(() => {
+        // reset animations so they shake again
+let playerchoices = playerchoicesbox.querySelectorAll("div");
+for (let i = 0; i < playerchoices.length; i++) {
+    playerchoices[i].style.animation = "none";  // reset previous animation
+    playerchoices[i].offsetHeight;             // force reflow
+    playerchoices[i].style.animation = "";     // restore original CSS animation
+}
+
         playerchoicesbox.classList.add('active');
        },1000);
 
